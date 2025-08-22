@@ -1,0 +1,1497 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>learun.webapi</name>
+    </assembly>
+    <members>
+        <member name="T:learun.controllers.Authorize.AuthorizeController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.13
+            描 述：功能权限
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Authorize.AuthorizeController.#ctor(learun.iapplication.AuthorizeIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="authorizeIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Authorize.AuthorizeController.GetPcFormData(System.String)">
+            <summary>
+            获取设置信息
+            </summary>
+            <param name="id">设置对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Authorize.AuthorizeController.GetData(System.String,System.Int32)">
+            <summary>
+            获取设置信息
+            </summary>
+            <param name="id">设置对象:角色或人员</param>
+            <param name="type">类型 1 模块 2 按钮 3 列 4 表单 5 移动端功能</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Authorize.AuthorizeController.SavePcForm(System.String,learun.iapplication.AuthorizeInputDto)">
+            <summary>
+            保存表单数据
+            </summary>
+            <param name="id">对象Id</param>
+            <param name="authorizeInputDto">提交信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Authorize.AuthorizeController.SaveForm(System.String,learun.iapplication.AuthorizeAppInputDto)">
+            <summary>
+            保存表单数据
+            </summary>
+            <param name="id">对象Id</param>
+            <param name="authorizeAppInputDto">提交信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Authorize.DataAuthorizeController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.13
+            描 述：数据权限
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Authorize.DataAuthorizeController.#ctor(learun.iapplication.DataAuthorizeIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="dataAuthorizeIBLL">数据权限操作接口</param>
+        </member>
+        <member name="M:learun.controllers.Authorize.DataAuthorizeController.GetPageList(learun.util.PaginationInputDto,System.String,System.String,System.Int32)">
+            <summary>
+            获取数据权限对应关系数据列表
+            </summary>
+            <param name="paginationInputDto">分页参数</param>
+            <param name="keyword">查询关键词</param>
+            <param name="objectId">用户或角色主键</param>
+            <param name="type">1.普通权限 2.自定义表单权限</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Authorize.DataAuthorizeController.GetEntity(System.String)">
+            <summary>
+            获取数据权限数据
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Authorize.DataAuthorizeController.AddForm(learun.iapplication.DataAuthorizeEntity)">
+            <summary>
+            新增数据权限
+            </summary>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Authorize.DataAuthorizeController.UpdateForm(System.String,learun.iapplication.DataAuthorizeEntity)">
+            <summary>
+            新增数据权限
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Authorize.DataAuthorizeController.DeleteForm(System.String)">
+            <summary>
+            删除数据权限
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.AnnexesFileController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.13
+            描 述：附件管理
+            </summary>
+        </member>
+        <member name="M:learun.controllers.AnnexesFileController.#ctor(learun.iapplication.AnnexesFileIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="annexesFileIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.AnnexesFileController.UploadAnnexesFileChunk(System.String,System.Int32)">
+            <summary>
+            上传附件分片数据
+            </summary>
+            <param name="fileId">文件主键</param>
+            <param name="chunk">分片序号</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.AnnexesFileController.MergeAnnexesFile(learun.iapplication.AnnexesFileInputDto)">
+            <summary>
+            合并上传附件的分片数据(固定文件夹)
+            </summary>
+            <param name="dto">提交参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.AnnexesFileController.RemoveAnnexesFileChunk(System.String,System.Int32)">
+            <summary>
+            移除附件分片数据
+            </summary>
+            <param name="fileId">文件主键</param>
+            <param name="chunks">总分片数</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.AnnexesFileController.DeleteAnnexesFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="fileId">文件主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.AnnexesFileController.DownAnnexesFile(System.String)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="fileId">文件id</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.AnnexesFileController.GetAnnexesFileList(System.String)">
+            <summary>
+            获取附件列表
+            </summary>
+            <param name="folderId">附件夹主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.AnnexesFileController.PreviewFile(System.String)">
+            <summary>
+            文件预览
+            </summary>
+            <param name="fileId">文件ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.AreaController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.13
+            描 述：区域划分
+            </summary>
+        </member>
+        <member name="M:learun.controllers.AreaController.#ctor(learun.iapplication.AreaIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="areaIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.AreaController.Getlist(System.String)">
+            <summary>
+            获取列表数据
+            </summary>
+            <param name="pid">父级主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.AreaController.AddArea(learun.iapplication.AreaEntity)">
+            <summary>
+            新增区域划分
+            </summary>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.AreaController.UpdateArea(System.String,learun.iapplication.AreaEntity)">
+            <summary>
+            修改区域划分
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.AreaController.DeleteForm(System.String)">
+            <summary>
+            删除区域划分
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.BaseInfo.LogController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.08.25
+            描 述：日志模块
+            </summary>
+        </member>
+        <member name="M:learun.controllers.BaseInfo.LogController.#ctor(learun.iapplication.LogIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="logIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.BaseInfo.LogController.GetPageList(learun.util.PaginationInputDto,learun.iapplication.LogQueryDto)">
+            <summary>
+             分页查询
+            </summary>
+            <param name="paginationInputDto">分页参数</param>
+            <param name="query">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.BaseInfo.LogController.SaveRemoveLog(System.Int32,System.String)">
+            <summary>
+            清空日志 7：保留最近7天 1:保留最近一个月 3:保留最近3个月
+            </summary>
+            <param name="categoryId">日志分类 1.登录日志 2.访问日志 3.操作日志 4.异常日志</param>
+            <param name="keepTime">保留时间段内</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.ModuleController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.08.25
+            描 述：功能模块
+            </summary>
+        </member>
+        <member name="M:learun.controllers.ModuleController.#ctor(learun.iapplication.ModuleIBLL,learun.iapplication.AuthorizeIBLL)">
+            <summary>
+            构造注入
+            </summary>
+            <param name="moduleIBLL"></param>
+            <param name="authorizeIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.ModuleController.GetALLList">
+            <summary>
+            获取所有模块信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.ModuleController.GetALLInfo(System.String)">
+            <summary>
+            获取所有模块信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.ModuleController.GetModule(System.String)">
+            <summary>
+            模块信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.ModuleController.AddForm(learun.iapplication.ModuleInputDto)">
+            <summary>
+            添加模块信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.ModuleController.UpdateModule(System.String,learun.iapplication.ModuleInputDto)">
+            <summary>
+            修改模块信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.ModuleController.DeleteForm(System.String)">
+            <summary>
+            删除模块信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.ModuleController.GetModuleInfo(System.String,System.String)">
+            <summary>
+            模块信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.CustmerForm.FormSchemeController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.14
+            描 述：自定义表单模板
+            </summary>
+        </member>
+        <member name="M:learun.controllers.CustmerForm.FormSchemeController.#ctor(learun.iapplication.FormSchemeIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="formSchemeIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.CustmerForm.FormSchemeController.GetPageList(learun.util.PaginationInputDto,System.String,System.String,System.Boolean)">
+            <summary>
+            获取分页数据
+            </summary>
+            <param name="paginationInputDto">分页参数</param>
+            <param name="keyword">关键字</param>
+            <param name="category">分类</param>
+            <param name="isEnabled">是否获取正式表单</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.CustmerForm.FormSchemeController.GetForm(System.String)">
+            <summary>
+            获取自定义表单设计数据
+            </summary>
+            <param name="id">id</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.CustmerForm.FormSchemeController.AddForm(learun.iapplication.FormSchemeInputDto)">
+            <summary>
+            新增自定义表单
+            </summary>
+            <param name="entity">模板数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.CustmerForm.FormSchemeController.UpdateForm(System.String,learun.iapplication.FormSchemeInputDto)">
+            <summary>
+            更新自定义表单
+            </summary>
+            <param name="id">id</param>
+            <param name="entity">模板数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.CustmerForm.FormSchemeController.DeleteForm(System.String)">
+            <summary>
+            删除自定义表单
+            </summary>
+            <param name="id">id</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.CustmerForm.FormSchemeController.UpdateState(System.String,System.Int32)">
+            <summary>
+            启用/停用表单
+            </summary>
+            <param name="id">主键</param>
+            <param name="state">状态1启用0禁用</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.CustmerForm.FormSchemeController.GetSchemePageList(learun.util.PaginationInputDto,System.String)">
+            <summary>
+            获取自定义表单模板历史数据
+            </summary>
+            <param name="paginationInputDto">分页参数</param>
+            <param name="id">自定义表单信息主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.CustmerForm.FormSchemeController.UpdateScheme(System.String,System.String)">
+            <summary>
+            更新表单模板版本
+            </summary>
+            <param name="id">信息主键</param>
+            <param name="schemeId">模板主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.CustmerForm.FormSchemeController.GetSchemeEntity(System.String)">
+            <summary>
+            获取自定义表单模板数据
+            </summary>
+            <param name="id">id</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Data.CodeRuleController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：数据编码
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Data.CodeRuleController.#ctor(learun.iapplication.CodeRuleIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="codeRuleIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Data.CodeRuleController.GetPageList(learun.util.PaginationInputDto,System.String)">
+            <summary>
+            获取分页数据
+            </summary>
+            <param name="paginationInputDto">分页参数</param>
+            <param name="keyword">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.CodeRuleController.GetList">
+            <summary>
+            获取数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.CodeRuleController.AddForm(learun.iapplication.CodeRuleEntity)">
+            <summary>
+            新增数据
+            </summary>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.CodeRuleController.UpdateForm(System.String,learun.iapplication.CodeRuleEntity)">
+            <summary>
+            更新数据
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.CodeRuleController.DeleteForm(System.String)">
+            <summary>
+            删除表单数据
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.CodeRuleController.GetEnCode(System.String)">
+            <summary>
+            获取单据编码
+            </summary>
+            <param name="code">编码</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Data.DataItemController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：数据字典
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Data.DataItemController.#ctor(learun.iapplication.DataItemIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="dataItemIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Data.DataItemController.GetClassifyList">
+            <summary>
+            获取字典分类列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataItemController.AddClassify(learun.iapplication.DataItemEntity)">
+            <summary>
+            新增分类数据
+            </summary>
+            <param name="entity">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataItemController.UpdateClassify(System.String)">
+            <summary>
+            获取分类实体数据
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataItemController.UpdateClassify(System.String,learun.iapplication.DataItemEntity)">
+            <summary>
+            更新分类数据
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataItemController.DeleteClassify(System.String)">
+            <summary>
+            删除分类数据
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataItemController.GetDetailList(System.String)">
+            <summary>
+            获取数据字典明显根据分类编号
+            </summary>
+            <param name="code">分类编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataItemController.AddDetail(System.String,learun.iapplication.DataItemDetailEntity)">
+            <summary>
+            新增明细数据实体
+            </summary>
+            <param name="code">分类编码</param>
+            <param name="entity">实体</param>
+        </member>
+        <member name="M:learun.controllers.Data.DataItemController.UpdateDetail(System.String,learun.iapplication.DataItemDetailEntity)">
+            <summary>
+            更新明细数据实体
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体</param>
+        </member>
+        <member name="M:learun.controllers.Data.DataItemController.DeleteDetail(System.String)">
+            <summary>
+            删除明细数据实体
+            </summary>
+            <param name="id">主键</param>
+        </member>
+        <member name="T:learun.controllers.Data.DataSourceController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：数据源管理
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Data.DataSourceController.#ctor(learun.iapplication.DataSourceIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="dataSourceIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Data.DataSourceController.GetList">
+            <summary>
+            获取数据源列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataSourceController.GetEntityByCode(System.String)">
+            <summary>
+            获取数据源
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataSourceController.GetDataColName(System.String)">
+            <summary>
+            获取数据源列名
+            </summary>
+            <param name="code">数据源编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataSourceController.GetDataTable(System.String,System.String)">
+            <summary>
+            获取数据源数据
+            </summary>
+            <param name="code">数据源编号</param>
+            <param name="queryJson">数据源请求条件字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataSourceController.GetDataTablePage(learun.util.PaginationInputDto,System.String,System.String)">
+            <summary>
+            获取数据源数据
+            </summary>
+            <param name="paginationInputDto">分页参数</param>
+            <param name="code">数据源编号</param>
+            <param name="queryJson">数据源请求条件字串</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataSourceController.AddForm(learun.iapplication.DataSourceEntity)">
+            <summary>
+            新增数据源
+            </summary>
+            <param name="entity">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataSourceController.UpdateForm(System.String,learun.iapplication.DataSourceEntity)">
+            <summary>
+            更新数据源
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DataSourceController.DeleteForm(System.String)">
+            <summary>
+            删除表单数据
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Data.DbController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：数据库
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Data.DbController.#ctor(learun.iapplication.DatabaseLinkIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="databaseLinkIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Data.DbController.GetList">
+            <summary>
+            获取数据库列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DbController.AddForm(learun.iapplication.DatabaseLinkEntity)">
+            <summary>
+            新增数据库连接
+            </summary>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DbController.UpdateForm(System.String,learun.iapplication.DatabaseLinkEntity)">
+            <summary>
+            更新数据库连接
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DbController.DeleteForm(System.String)">
+            <summary>
+            删除数据库连接
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DbController.TestConnection(System.String,System.String,System.String)">
+            <summary>
+            测试连接串是否正确
+            </summary>
+            <param name="connection">连接串</param>
+            <param name="dbType">数据库类型</param>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Data.DbTableController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：数据库表
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Data.DbTableController.#ctor(learun.iapplication.DatabaseTableIBLL,learun.iapplication.DbDraftIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="databaseTableIBLL"></param>
+            <param name="dbDraftIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Data.DbTableController.GetList(System.String)">
+            <summary>
+            获取数据表数据
+            </summary>
+            <param name="code">数据库编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Data.DbTableController.ExistFiled(System.String,System.String,System.String,System.String)">
+            <summary>
+            判断数据表字段重复
+            </summary>
+            <param name="keyValue">主键值</param>
+            <param name="tableName">表名</param>
+            <param name="keyName">主键名</param>
+            <param name="filedsJson">数据字段</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Language.MappingController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：多语言翻译
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Language.MappingController.#ctor(learun.iapplication.LGMapIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="lGMapIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Language.MappingController.GetLanguageByCode(System.String,System.String)">
+            <summary>
+            根据语言类型编码获取语言包
+            </summary>
+            <param name="code">语言编码</param>
+            <param name="mainCode">主语言编码</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Language.TypeController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：多语言类型
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Language.TypeController.#ctor(learun.iapplication.LGTypeIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="lGTypeIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Language.TypeController.GetList">
+            <summary>
+            获取语言类型数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Language.TypeController.AddForm(learun.iapplication.LGTypeEntity)">
+            <summary>
+            新增语言类型
+            </summary>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Language.TypeController.UpdateForm(System.String,learun.iapplication.LGTypeEntity)">
+            <summary>
+            更新语言类型
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Language.TypeController.DeleteForm(System.String)">
+            <summary>
+            删除语言类型
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.LoginController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.08.24
+            描 述：登录模块
+            </summary>
+        </member>
+        <member name="M:learun.controllers.LoginController.#ctor(learun.iapplication.ILoginBLL)">
+            <summary>
+            构造注入
+            </summary>
+            <param name="iLoginBLL">登录模块</param>
+        </member>
+        <member name="M:learun.controllers.LoginController.Login(learun.iapplication.LoginInputDto)">
+            <summary>
+            登录接口
+            </summary>
+            <param name="loginInputDto">输入参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.MApp.FunctionController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：移动功能管理
+            </summary>
+        </member>
+        <member name="M:learun.controllers.MApp.FunctionController.#ctor(learun.iapplication.FunctionIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="functionIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.MApp.FunctionController.GetList">
+            <summary>
+            获取数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.MApp.FunctionController.GetForm(System.String)">
+            <summary>
+            获取表单数据
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.MApp.FunctionController.DeleteForm(System.String)">
+            <summary>
+            删除表单数据
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.MApp.FunctionController.SaveForm(learun.iapplication.FunctionOutputDto)">
+            <summary>
+            新增移动功能
+            </summary>
+            <param name="functionOutputDto">提交对象信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.MApp.FunctionController.UpdateForm(System.String,learun.iapplication.FunctionOutputDto)">
+            <summary>
+            更新移动功能
+            </summary>
+            <param name="id">主键</param>
+            <param name="functionOutputDto">提交对象信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.MApp.FunctionController.UpDateSate(System.String,System.Int32)">
+            <summary>
+            启用/停用表单
+            </summary>
+            <param name="id">主键</param>
+            <param name="state">状态1启用0禁用</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Organization.CompanyController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：公司管理
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Organization.CompanyController.#ctor(learun.iapplication.CompanyIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="companyIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Organization.CompanyController.GetList">
+            <summary>
+            获取公司列表信息test
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.CompanyController.AddForm(learun.iapplication.CompanyEntity)">
+            <summary>
+            新增公司
+            </summary>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.CompanyController.UpdateForm(System.String,learun.iapplication.CompanyEntity)">
+            <summary>
+            更新公司
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.CompanyController.DeleteForm(System.String)">
+            <summary>
+            删除公司
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Organization.DepartmentController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：部门管理
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Organization.DepartmentController.#ctor(learun.iapplication.DepartmentIBLL,learun.iapplication.CompanyIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="departmentIBLL"></param>
+            <param name="companyIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Organization.DepartmentController.GetList(System.String)">
+            <summary>
+            获取部门列表信息(根据公司Id)
+            </summary>
+            <param name="companyId">公司Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.DepartmentController.GetEntity(System.String)">
+            <summary>
+            获取部门信息
+            </summary>
+            <param name="id">公司Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.DepartmentController.AddForm(learun.iapplication.DepartmentEntity)">
+            <summary>
+            新增部门
+            </summary>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.DepartmentController.UpdateForm(System.String,learun.iapplication.DepartmentEntity)">
+            <summary>
+            更新部门
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.DepartmentController.DeleteForm(System.String)">
+            <summary>
+            删除部门
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Organization.PostController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：岗位管理
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Organization.PostController.#ctor(learun.iapplication.PostIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="postIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Organization.PostController.GetList(System.String,System.String)">
+            <summary>
+            获取岗位列表信息
+            </summary>
+            <param name="companyId">公司</param>
+            <param name="departmentId">部门</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.PostController.SaveForm(learun.iapplication.PostEntity)">
+            <summary>
+            新增岗位
+            </summary>
+            <param name="entity">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.PostController.SaveForm(System.String,learun.iapplication.PostEntity)">
+            <summary>
+            更新岗位
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.PostController.DeleteForm(System.String)">
+            <summary>
+            删除岗位
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Organization.RoleController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.08.24
+            描 述：角色模块
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Organization.RoleController.#ctor(learun.iapplication.RoleIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="roleIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Organization.RoleController.GetList">
+            <summary>
+            获取角色列表信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.RoleController.SaveForm(learun.iapplication.RoleEntity)">
+            <summary>
+            新增角色
+            </summary>
+            <param name="entity">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.RoleController.SaveForm(System.String,learun.iapplication.RoleEntity)">
+            <summary>
+            更新角色
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.RoleController.DeleteForm(System.String)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Organization.UserRelationController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.13
+            描 述：用户组（角色，岗位）
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Organization.UserRelationController.#ctor(learun.iapplication.UserRelationIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="userRelationIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Organization.UserRelationController.GetUserIdList(System.String)">
+            <summary>
+            获取角色或岗位成员
+            </summary>
+            <param name="id">角色或岗位主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Organization.UserRelationController.SaveForm(System.String,System.Int32,learun.iapplication.UserRelationInputDto)">
+            <summary>
+            保存表单数据
+            </summary>
+            <param name="id">对象主键</param>
+            <param name="type">分类:1-角色2-岗位</param>
+            <param name="userRelationInputDto">对用户主键列表</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.UserController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.08.24
+            描 述：用户模块
+            </summary>
+        </member>
+        <member name="M:learun.controllers.UserController.#ctor(learun.iapplication.UserIBLL,learun.iapplication.ImgIBLL,learun.iapplication.UserRelationIBLL,learun.iapplication.AuthorizeIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="userIBLL"></param>
+            <param name="imgIBLL"></param>
+            <param name="userRelationIBLL"></param>
+            <param name="authorizeIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.UserController.GetPageList(learun.util.PaginationInputDto,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取用户分页数据
+            </summary>
+            <param name="paginationInputDto">分页参数</param>
+            <param name="keyword">查询关键词</param>
+            <param name="companyId">公司id</param>
+            <param name="departmentId">部门id</param>
+            <param name="ids">用户ids</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.UserController.GetUserInfo">
+            <summary>
+            获取用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.UserController.GetEntity(System.String)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="id">用户id</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.UserController.GetHeaderImg(System.String)">
+            <summary>
+            用户头像
+            </summary>
+            <param name="id">id</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.UserController.UploadHead(System.String)">
+            <summary>
+            上传头像
+            </summary>
+            <param name="id">用户主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.UserController.ValidatorPassword(System.String)">
+            <summary>
+            验证密码
+            </summary>
+            <param name="psw"></param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.UserController.UpdatePassword(learun.iapplication.UserUpdatePswInputDto)">
+            <summary>
+            提交修改密码
+            </summary>
+            <param name="inputDto">提交参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.UserController.AddForm(learun.iapplication.UserEntity)">
+            <summary>
+            新增用户
+            </summary>
+            <param name="entity">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.UserController.SaveForm(System.String,learun.iapplication.UserEntity)">
+            <summary>
+            更新用户
+            </summary>
+            <param name="id">主键</param>
+            <param name="entity">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.UserController.DeleteForm(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.UserController.ResetPassword(System.String)">
+            <summary>
+            重置用户账号密码
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.UserController.UpdateState(System.String,System.Int32)">
+            <summary>
+            更新用户状态
+            </summary>
+            <param name="id">主键</param>
+            <param name="state">0 禁用 1  启用</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.controllers.Workflow.SchemeController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.10.16
+            描 述：流程管理
+            </summary>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.#ctor(learun.iapplication.NWFSchemeIBLL,learun.iapplication.AnnexesFileIBLL)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="nWFSchemeIBLL"></param>
+            <param name="annexesFileIBLL"></param>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.GetInfoPageList(learun.util.PaginationInputDto,System.String,System.String)">
+            <summary>
+            获取分页数据
+            </summary>
+            <param name="paginationInputDto">分页参数</param>
+            <param name="keyword">查询关键字</param>
+            <param name="category">分类</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.GetALLInfoList">
+            <summary>
+            获取流程列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.GetInfoList(System.String)">
+            <summary>
+            获取自定义流程列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.GetSchemePageList(System.String,learun.util.PaginationInputDto)">
+            <summary>
+            获取模板分页数据
+            </summary>
+            <param name="paginationInputDto">分页参数</param>
+            <param name="schemeInfoId">流程模板信息主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.GetFormData(System.String)">
+            <summary>
+            获取流程模板数据
+            </summary>
+            <param name="code">流程编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.GetScheme(System.String)">
+            <summary>
+            获取流程模板数据
+            </summary>
+            <param name="id">模板主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.ExportScheme(System.String)">
+            <summary>
+            获取流程模板数据
+            </summary>
+            <param name="code">流程编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.ExecuteImportScheme(System.String,System.Int32,System.String)">
+            <summary>
+            导入流程模板（暂定）
+            </summary>
+            <param name="fileId">文件主键</param>
+            <param name="chunks">分片数</param>
+            <param name="ext">文件扩展名</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.AddForm(learun.iapplication.NWFSchemeInputDto)">
+            <summary>
+            新增流程模板
+            </summary>
+            <param name="nWFSchemeInputDto">提交参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.UpdateForm(System.String,learun.iapplication.NWFSchemeInputDto)">
+            <summary>
+            更新流程模板
+            </summary>
+            <param name="id">流程主键</param>
+            <param name="nWFSchemeInputDto">提交参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.DeleteForm(System.String)">
+            <summary>
+            删除模板数据
+            </summary>
+            <param name="id">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.UpDateSate(System.String,System.Int32)">
+            <summary>
+            启用/停用表单
+            </summary>
+            <param name="id">主键</param>
+            <param name="state">状态1启用0禁用</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.controllers.Workflow.SchemeController.UpdateScheme(System.String,System.String)">
+            <summary>
+            更新表单模板版本
+            </summary>
+            <param name="id">主键</param>
+            <param name="schemeId">流程模板主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.webapi.AddAuthTokenHeaderParameter">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2020.04.17
+            描 述：给api添加权限验证信息参数
+            </summary>
+        </member>
+        <member name="M:learun.webapi.AddAuthTokenHeaderParameter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            给接口添加隐性参数
+            </summary>
+            <param name="operation">api操作接口</param>
+            <param name="context">上下文</param>
+        </member>
+        <member name="T:learun.webapi.CustomResultFilter">
+            <summary>
+            自定义返回数据
+            </summary>
+        </member>
+        <member name="M:learun.webapi.CustomResultFilter.OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)">
+            <summary>
+            返回结果处理
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:learun.webapi.CustomResultFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:learun.webapi.ExceptionFilter">
+            <summary>
+            异常过滤器
+            </summary>
+        </member>
+        <member name="M:learun.webapi.ExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            发生异常时进入
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:learun.webapi.BaseApiController">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2019.09.11
+            描 述：基础控制器
+            </summary>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.CurrentUser(System.String)">
+            <summary>
+            获取当前用户信息
+            </summary>
+            <param name="userId">用户id</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.GetRuleCode(System.String)">
+            <summary>
+            获取编码
+            </summary>
+            <param name="code">编码规则编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.UseRuleSeed(System.String)">
+            <summary>
+            占用编码
+            </summary>
+            <param name="code">编码规则编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.GetUserName">
+            <summary>
+            获取登录者用户名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.GetUserId">
+            <summary>
+            获取登录者用户Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.GetUserAccount">
+            <summary>
+            获取登录者用户账号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.SuccessTable(System.Object)">
+            <summary>
+            返回成功数据
+            </summary>
+            <param name="data">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.Success(System.Object)">
+            <summary>
+            返回成功数据
+            </summary>
+            <param name="data">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.Success(System.String,System.Object)">
+            <summary>
+            返回成功消息
+            </summary>
+            <param name="info">信息</param>
+            <param name="data">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.SuccessInfo(System.String)">
+            <summary>
+            返回成功数据
+            </summary>
+            <param name="info">信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.Fail(System.String)">
+            <summary>
+            返回失败消息
+            </summary>
+            <param name="info">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.OK(System.Object)">
+            <summary>
+            返回信息
+            </summary>
+            <param name="responseDto">返回数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.BaseApiController.GetCookies(System.String)">
+            <summary>
+            获取cookies
+            </summary>
+            <param name="key">键</param>
+            <returns>返回对应的值</returns>
+        </member>
+        <member name="T:learun.webapi.AuthorizeMiddleware">
+            <summary>
+            版 本 Learun-Core-VUE 力软开发框架
+            Copyright (c) 2019-present 力软信息技术（苏州）有限公司
+            创建人：tobin
+            日 期：2019.09.11
+            描 述：权限中间件
+            </summary>
+        </member>
+        <member name="M:learun.webapi.AuthorizeMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,learun.operat.IOperator)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="next">请求委托</param>
+            <param name="ioperator">验证登录信息方法</param>
+        </member>
+        <member name="M:learun.webapi.AuthorizeMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            执行
+            </summary>
+            <param name="httpContext">请求连接</param>
+            <returns></returns>
+        </member>
+        <member name="M:learun.webapi.AuthorizeMiddleware.RespondWithJson(Microsoft.AspNetCore.Http.HttpResponse,System.Object)">
+            <summary>
+            返回请求信息
+            </summary>
+            <param name="response">返回头</param>
+            <param name="data">数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.webapi.Program">
+            <summary>
+            程序启动项
+            </summary>
+        </member>
+        <member name="M:learun.webapi.Program.Main(System.String[])">
+            <summary>
+            入口方法
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:learun.webapi.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            主体构建
+            </summary>
+            <param name="args">参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:learun.webapi.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:learun.webapi.Startup.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="env"></param>
+        </member>
+        <member name="M:learun.webapi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:learun.webapi.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:learun.webapi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:learun.webapi.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="M:learun.webapi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

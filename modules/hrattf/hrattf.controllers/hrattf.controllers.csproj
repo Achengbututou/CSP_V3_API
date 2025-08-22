@@ -1,0 +1,3 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">	<PropertyGroup>		<TargetFramework>net8.0</TargetFramework>      <Nullable>disable</Nullable>      <EnableDynamicLoading>true</EnableDynamicLoading>      <GenerateDocumentationFile>True</GenerateDocumentationFile>	</PropertyGroup>	<ItemGroup>
+		<PackageReference Include="learun.utils.web" Version="6.0.3.2" />
+	</ItemGroup>	<ItemGroup>		<ProjectReference Include="..\hrattf.bll\hrattf.bll.csproj" />	</ItemGroup></Project>	

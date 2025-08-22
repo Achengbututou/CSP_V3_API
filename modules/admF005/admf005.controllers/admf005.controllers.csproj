@@ -1,0 +1,1 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">	  <PropertyGroup>	    <TargetFramework>net8.0</TargetFramework>	  </PropertyGroup>	  <ItemGroup>	    <ProjectReference Include="../admf005.bll/admf005.bll.csproj" />		<PackageReference Include="learun.utils.web" Version="6.0.3.2" />	  </ItemGroup>	</Project>	

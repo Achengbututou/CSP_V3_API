@@ -1,0 +1,90 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <UserSecretsId>80560d7e-b669-4de1-95f1-26eb23012243</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <OutputType>Exe</OutputType>
+    <Version>3.2.7</Version>
+    <SubVersion>1.0.0</SubVersion>
+    <Authors>Button Lin</Authors>
+	<Company>Crystal International Group</Company>
+	<Product>Crystal system platform</Product>
+	<Copyright>https://www.crystalgroup.com</Copyright>
+	<PackageProjectUrl>https://www.crystalgroup.com</PackageProjectUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp3.1\publish\learun.webapi.xml</DocumentationFile>
+    <OutputPath>bin\Release\netcoreapp3.1\publish\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="apimanage.bll" Version="1.0.2.2" />
+    <PackageReference Include="apimanage.controllers" Version="1.0.2.2" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageReference Include="learun.application" Version="6.0.7.19" />
+    <PackageReference Include="learun.controllers" Version="6.0.7.12" />
+    <PackageReference Include="learun.datav.controllers" Version="1.0.2.1" />
+    <PackageReference Include="learun.ding.controllers" Version="6.0.3.1" />
+    <PackageReference Include="learun.iapplication" Version="6.0.7.11" />
+    <PackageReference Include="learun.iquartz" Version="6.0.3.1" />
+    <PackageReference Include="learun.language.controllers" Version="6.0.3.1" />
+    <PackageReference Include="learun.plugin.bll" Version="1.0.0.2" />
+    <PackageReference Include="learun.plugin.controllers" Version="1.0.0.1" />
+    <PackageReference Include="learun.plugin.ibll" Version="1.0.0.1" />
+    <PackageReference Include="learun.quartz.controllers" Version="6.0.3.1" />
+    <PackageReference Include="learun.sass.controllers" Version="6.0.3" />
+    <PackageReference Include="learun.utils.web" Version="6.0.3.2" />
+    <PackageReference Include="learun.wechat.bll" Version="6.0.3.1" />
+    <PackageReference Include="learun.wechat.controllers" Version="6.0.3.1" />
+    <PackageReference Include="learun.wechat.ibll" Version="6.0.3.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.11" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+    <PackageReference Include="System.DirectoryServices.Protocols" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\modules\demo\demo.controllers\demo.controllers.csproj" />
+    <ProjectReference Include="..\modules\erpCase\erpcase.controllers\erpcase.controllers.csproj" />
+    <ProjectReference Include="..\modules\erp\erp.controllers\erp.controllers.csproj" />
+    <ProjectReference Include="..\modules\mes\mes.controllers\mes.controllers.csproj" />
+    <ProjectReference Include="..\modules\oa\oa.controllers\oa.controllers.csproj" />
+	<!--<ProjectReference Include="..\modules\hrattf\hrattf.controllers\hrattf.controllers.csproj" />-->
+    <!--<ProjectReference Include="..\modules\test1\test1.controllers\test1.controllers.csproj" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="wwwroot\database" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\temp\preview\3dfa93cda9471de8c9ae54ff70706d431671437769628.html" />
+    <_ContentIncludedByDefault Remove="wwwroot\temp\preview\3dfa93cda9471de8c9ae54ff70706d431671437862949.html" />
+    <_ContentIncludedByDefault Remove="wwwroot\temp\preview\52188e23be72007b0e58b29daf3a6ec71671441617416.html" />
+    <_ContentIncludedByDefault Remove="wwwroot\temp\preview\52188e23be72007b0e58b29daf3a6ec71671523112858.html" />
+    <_ContentIncludedByDefault Remove="wwwroot\temp\preview\52188e23be72007b0e58b29daf3a6ec71671607463790.html" />
+  </ItemGroup>
+
+	<!-- 将 learun.*.controllers nuget包 XML 文件复制到输出目录 -->
+	<Target Name="CopyXmlOnBuild" AfterTargets="Build">
+		<ItemGroup>
+			<PackageReferenceFiles Include="$(NuGetPackageRoot)\%(PackageReference.Identity)\%(PackageReference.Version)\lib\net8.0\*.xml" />
+		</ItemGroup>
+		<Copy SourceFiles="@(PackageReferenceFiles)" DestinationFolder="$(OutDir)" />
+	</Target>
+
+	<Target Name="CopyXmlOnPublish" AfterTargets="Publish">
+		<Copy SourceFiles="@(PackageReferenceFiles)" DestinationFolder="$(PublishDir)" />
+	</Target>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+
+</Project>

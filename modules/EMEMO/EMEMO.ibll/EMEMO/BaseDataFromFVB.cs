@@ -1,0 +1,112 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+
+namespace test.ibll.EMEMO
+{
+    public class BaseDataFromFVBDto
+    {
+        /// RID
+        /// </summary>
+        public string rid { get; set; }
+        /// <summary>
+        /// 
+        /// customer_code
+        /// </summary>
+        public string Customer_Code { get; set; }
+        /// <summary>
+        /// 
+        /// customer_name
+        /// </summary>
+        public string customer_name { get; set; }
+        /// <summary>
+        /// so_no
+        /// </summary>
+        public string so_no { get; set; }
+        /// <summary>
+        /// customer_dept
+        /// </summary>
+        public string customer_dept { get; set; }
+        /// <summary>
+        /// storage_location
+        /// </summary>
+        public string storage_location { get; set; }
+        /// <summary>
+        /// material_code
+        /// </summary>
+        public string material_code { get; set; }
+        /// <summary>
+        /// material_desc
+        /// </summary>
+        public string material_desc { get; set; }
+        /// <summary>
+        /// grid
+        /// </summary>
+        public string grid { get; set; }
+        /// <summary>
+        /// grid_Name
+        /// </summary>
+        public string grid_Name { get; set; }
+        /// <summary>
+        /// customer_style_no
+        /// </summary>
+        public string customer_style_no { get; set; }
+        /// <summary>
+        /// system_batch
+        /// </summary>
+        public string system_batch { get; set; }
+        /// <summary>
+        /// vendor_batch
+        /// </summary>
+        public string vendor_batch { get; set; }
+        /// <summary>
+        /// valuation_type
+        /// </summary>
+        public string valuation_type { get; set; }
+        /// <summary>
+        /// uom
+        /// </summary>
+        public string uom { get; set; }
+        /// <summary>
+        /// so_plant
+        /// </summary>
+        public string so_plant { get; set; }
+        /// <summary>
+        /// company_code
+        /// </summary>
+        public string company_code { get; set; }
+        /// <summary>
+        /// plant
+        /// </summary>
+        public string plant { get; set; }
+        /// <summary>
+        /// factory
+        /// </summary>
+        public string factory { get; set; }
+        /// <summary>
+        /// material_type
+        /// </summary>
+        public string material_type { get; set; }
+        /// <summary>
+        /// currency
+        /// </summary>
+        public string currency { get; set; }
+        /// <summary>
+        /// customer_season
+        /// </summary>
+        public string customer_season { get; set; }
+        /// <summary>
+        /// total_on_hand_qty
+        /// </summary>
+        public long? total_on_hand_qty { get; set; }
+        /// <summary>
+        /// total_on_hand_amt
+        /// </summary>
+        public long? total_on_hand_amt { get; set; }
+        /// <summary>
+        /// total_on_hand_amt_trading
+        /// </summary>
+        public long? total_on_hand_amt_trading { get; set; }
+    }
+}

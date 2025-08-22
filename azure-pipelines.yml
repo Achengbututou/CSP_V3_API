@@ -1,0 +1,46 @@
+trigger:
+- master # or the name of your main branch
+- feature/*
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+ # Checkout the repository 
+- checkout: self
+
+ # Disable shallow fetch
+  fetchDepth: 0
+
+# Prepare Analysis Configuration task
+- task: SonarQubePrepare@7
+  inputs:
+    SonarQube: 'csp_core_api_v3'
+    scannerMode: 'dotnet'
+    projectKey: 'CSP_CORE_API_V3_CSP_CORE_API_V3_ff76d3f1-2c7a-4189-93b9-4989fa7e6520'
+    projectName: 'csp_core_api_v3'
+
+# Dotnet build task
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
+  inputs:
+    command: 'restore'
+    projects: '*.sln'
+    feedsToUse: 'select'
+    vstsFeed: '68f814e1-aae7-4408-9fa9-af2e4c9c0e85'
+    includeNuGetOrg: true
+  
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: 'build'
+    projects: '*.sln'
+    arguments: --configuration Release --no-restore
+
+# Run Code Analysis task
+- task: SonarQubeAnalyze@7
+
+# Publish Quality Gate Result task
+- task: SonarQubePublish@7
+  inputs:
+    pollingTimeoutSec: '3000'

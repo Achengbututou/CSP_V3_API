@@ -1,0 +1,4 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">	  <PropertyGroup>	    <TargetFramework>net8.0</TargetFramework>	    <Nullable>disable</Nullable>	    <EnableDynamicLoading>true</EnableDynamicLoading>	  </PropertyGroup>	  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">	    <DocumentationFile></DocumentationFile>	  </PropertyGroup>	  <ItemGroup>
+  <PackageReference Include="learun.iapplication" Version="6.0.7" />
+  <PackageReference Include="learun.iquartz" Version="6.0.3" />
+</ItemGroup>	</Project>	

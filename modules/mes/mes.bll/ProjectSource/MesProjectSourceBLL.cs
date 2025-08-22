@@ -1,0 +1,73 @@
+﻿using ce.autofac.extension;
+using learun.util;
+using learun.iapplication;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using mes.ibll;
+namespace mes.bll {
+    /// <summary>
+    /// MES-MES系统
+    /// Copyright © 2021-present 力软信息技术（苏州）有限公司出品
+    /// 创建人：超级管理员
+    /// 日 期： 2023-09-01 16:14:55
+    /// 描 述： 项目来源
+    /// </summary>
+    public class MesProjectSourceBLL: BLLBase, IMesProjectSourceBLL, BLL {
+        private readonly MesProjectSourceService mesProjectSourceService = new MesProjectSourceService();
+        #region 获取数据
+        /// <summary>
+        /// 获取项目来源的列表数据
+        /// </summary>
+        /// <param name="queryParams">查询参数</param>
+        /// <returns></returns>
+        public Task<IEnumerable<MesProjectSourceEntity>>GetList(MesProjectSourceEntity queryParams) {
+            return mesProjectSourceService.GetList(queryParams);
+        }
+        /// <summary>
+        /// 获取项目来源的分页数据
+        /// </summary>
+        /// <param name="pagination">分页参数</param>
+        /// <param name="queryParams">查询参数</param>
+        /// <returns></returns>
+        public Task<IEnumerable<MesProjectSourceEntity>>GetPageList(Pagination pagination, MesProjectSourceEntity queryParams) {
+            return mesProjectSourceService.GetPageList(pagination, queryParams);
+        }
+        /// <summary>
+        /// 获取实体数据
+        /// </summary>
+        /// <param name="keyValue">主键</param>
+        /// <returns></returns>
+        public Task<MesProjectSourceEntity>GetEntity(string keyValue) {
+            return mesProjectSourceService.GetEntity(keyValue);
+        }
+        #endregion
+        #region 提交数据
+        /// <summary>
+        /// 删除实体
+        /// </summary>
+        /// <param name="keyValue">主键</param>
+        /// <returns></returns>
+        public async Task Delete(string keyValue) {
+            await mesProjectSourceService.Delete(keyValue);
+        }
+        /// <summary>
+        /// 批量删除实体
+        /// </summary>
+        /// <param name="keyValues">主键集</param>
+        /// <returns></returns>
+        public async Task Deletes(string keyValues) {
+            await mesProjectSourceService.Deletes(keyValues);
+        }
+        /// <summary>
+        /// 保存数据
+        /// </summary>
+        /// <param name="keyValue">主键</param>
+        /// <param name="entity">实体</param>
+        /// <returns></returns>
+        public async Task SaveEntity(string keyValue, MesProjectSourceEntity entity) {
+            await mesProjectSourceService.SaveEntity(keyValue, entity);
+        }
+        #endregion
+    }
+}
